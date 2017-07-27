@@ -1,7 +1,7 @@
 def run():
     import os
     import csv
-    import datetime
+    from datetime import date,timedelta
     from pandas_datareader import data
 
     print ("\n")
@@ -57,7 +57,7 @@ def run():
     response = data.DataReader(symbol_list, data_source, start, end)
 
 # PARSE RESPONSE
-    
+
     daily_closing_prices = response.ix["Close"] # ix() is a pandas DataFrame function
 
     #stock_prices = []
