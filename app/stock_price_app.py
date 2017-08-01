@@ -55,6 +55,7 @@ def date_input():
 
         else:
             "Error. Response not recognized. Please try again. "
+
         return start, end
 
 def info_input(response):
@@ -75,11 +76,12 @@ def info_input(response):
 def run():
     header("Hey " + os.getlogin() + "!")
     header("Welcome to the Stock Price Finder!")
+    header("This app will output your results into a CSV file that you can find in the /data folder.")
 
     symbol_list = []
 
     symbol_input(symbol_list)
-    start,end = date_input()
+    start, end = date_input()
     data_source = source_input()
 
     response = data.DataReader(symbol_list, data_source, start, end)
